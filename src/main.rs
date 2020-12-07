@@ -1,6 +1,7 @@
 mod day01;
 mod day02;
 mod day03;
+mod day04;
 
 fn main() {
     println!("Day 01");
@@ -12,4 +13,7 @@ fn main() {
     println!("\nDay 03");
     day03::solution::traverse_trees();
     day03::solution::traverse_slopes();
+    println!("\nDay 04");
+    day04::solution::validate_passports();
+    day04::solution::valide_passports_constrained();
 }
