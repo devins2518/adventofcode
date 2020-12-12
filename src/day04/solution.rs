@@ -1,4 +1,5 @@
 use std::fs::read_to_string;
+use std::path::PathBuf;
 
 #[derive(Debug)]
 struct Passport {
@@ -145,8 +146,8 @@ impl Passport {
 }
 
 // Parses the file and returns a vector of Passports to be validated
-fn parse_file(constrained: bool) -> Vec<Passport> {
-    let file = read_to_string("day04/input.txt").unwrap();
+fn parse_file(input: PathBuf, constrained: bool) -> Vec<Passport> {
+    let file = read_to_string(input).unwrap();
     let groups: Vec<String> = file.split("\n\n").map(|x| x.replace("\n", " ")).collect();
 
     let mut passports: Vec<Passport> = Vec::new();
@@ -166,8 +167,8 @@ fn parse_file(constrained: bool) -> Vec<Passport> {
     passports
 }
 
-pub fn validate_passports() {
-    let passports = parse_file(false);
+pub fn validate_passports(input: PathBuf) {
+    let passports = parse_file(input, false);
     let mut count = 0;
 
     for passport in passports {
@@ -185,8 +186,8 @@ pub fn validate_passports() {
     println!("{}", count);
 }
 
-pub fn valide_passports_constrained() {
-    let passports = parse_file(true);
+pub fn valide_passports_constrained(input: PathBuf) {
+    let passports = parse_file(input, true);
     let mut count = 0;
 
     for passport in passports {

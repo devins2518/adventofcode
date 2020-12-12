@@ -1,8 +1,9 @@
 use std::fs;
+use std::path::PathBuf;
 
-pub fn sum_to_year() -> u32 {
+pub fn sum_to_year(input: PathBuf) -> u32 {
     // Stupid way to push each line into a vec
-    let file = fs::read_to_string("day01/input.txt").unwrap();
+    let file = fs::read_to_string(input).unwrap();
     let mut vec: Vec<u32> = Vec::new();
     for fileline in file.lines() {
         vec.push(fileline.parse::<u32>().unwrap());
@@ -18,9 +19,9 @@ pub fn sum_to_year() -> u32 {
     0
 }
 
-pub fn sum_of_three() -> u32 {
+pub fn sum_of_three(input: PathBuf) -> u32 {
     // Stupid way to push each line into a vec
-    let file = fs::read_to_string("day01/input.txt").unwrap();
+    let file = fs::read_to_string(input).unwrap();
     let mut vec: Vec<i32> = Vec::new();
     for fileline in file.lines() {
         vec.push(fileline.parse::<i32>().unwrap());

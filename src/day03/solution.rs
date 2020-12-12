@@ -1,4 +1,5 @@
 use std::fs::read_to_string;
+use std::path::PathBuf;
 
 #[derive(Debug)]
 struct Point {
@@ -13,8 +14,8 @@ impl Point {
     }
 }
 
-pub fn traverse_trees() {
-    let file = read_to_string("day03/input.txt").unwrap();
+pub fn traverse_trees(input: PathBuf) {
+    let file = read_to_string(input).unwrap();
 
     let mut trees = 0;
 
@@ -40,8 +41,8 @@ pub fn traverse_trees() {
     println!("{}", trees);
 }
 
-pub fn traverse_slopes() {
-    let file = read_to_string("day03/input.txt").unwrap();
+pub fn traverse_slopes(input: PathBuf) {
+    let file = read_to_string(input).unwrap();
 
     // Setup a main vector (lines) with subvectors (chars)
     let lines: Vec<Vec<char>> = file.lines().map(|x| x.chars().collect()).collect();

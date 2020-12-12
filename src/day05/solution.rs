@@ -1,4 +1,5 @@
 use std::fs::read_to_string;
+use std::path::PathBuf;
 
 struct Range {
     max: u8,
@@ -48,8 +49,8 @@ fn parse_chars(chars: Vec<char>, row: &mut Range, column: &mut Range) {
     }
 }
 
-pub fn find_seat() {
-    let file = read_to_string("day05/input.txt").unwrap();
+pub fn find_seat(input: PathBuf) {
+    let file = read_to_string(input).unwrap();
 
     let seats: Vec<&str> = file.split("\n").filter(|x| x.len() > 0).collect();
 
@@ -69,8 +70,8 @@ pub fn find_seat() {
     println!("{}", high);
 }
 
-pub fn find_my_seat() {
-    let file = read_to_string("day05/input.txt").unwrap();
+pub fn find_my_seat(input: PathBuf) {
+    let file = read_to_string(input).unwrap();
 
     let mut boarding_passes: Vec<_> = file
         .lines()

@@ -1,7 +1,8 @@
 use std::fs::read_to_string;
+use std::path::PathBuf;
 
-pub fn parse_password() {
-    let file = read_to_string("day02/input.txt").unwrap();
+pub fn parse_password(input: PathBuf) {
+    let file = read_to_string(input).unwrap();
 
     let mut valid_pass = 0;
 
@@ -28,8 +29,8 @@ pub fn parse_password() {
     println!("{}", valid_pass);
 }
 
-pub fn parse_password_position() {
-    let file = read_to_string("day02/input.txt").unwrap();
+pub fn parse_password_position(input: PathBuf) {
+    let file = read_to_string(input).unwrap();
 
     let mut valid_pass = 0;
 
