@@ -2,6 +2,7 @@ mod day01;
 mod day02;
 mod day03;
 mod day04;
+mod day05;
 
 fn main() {
     println!("Day 01");
@@ -16,4 +17,7 @@ fn main() {
     println!("\nDay 04");
     day04::solution::validate_passports();
     day04::solution::valide_passports_constrained();
+    println!("\nDay 05");
+    day05::solution::find_seat();
+    day05::solution::find_my_seat();
 }
