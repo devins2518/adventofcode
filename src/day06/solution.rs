@@ -46,9 +46,7 @@ fn count_questions_collection(string: &str) -> u32 {
 
     let mut length = 0;
 
-    println!("{:?}", people);
     for element in hash {
-        println!("{:?}", element);
         if element.1 == people.len() {
             length += 1;
         }
