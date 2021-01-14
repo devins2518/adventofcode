@@ -8,6 +8,8 @@ mod day05;
 mod day06;
 //mod day07;
 mod day08;
+mod day09;
+mod day10;
 
 fn main() {
     let path = Path::new(env!("CARGO_MANIFEST_DIR"));
@@ -32,6 +34,11 @@ fn main() {
     //println!("\nDay 07");
     //day07::solution::find_gold_bag(path.join("src/day07/input.txt"));
     println!("\nDay 08");
-    day08::solution::find_boot(path.join("src/day08/input.txt"));
+    //day08::solution::find_boot(path.join("src/day08/input.txt"));
     //day08::solution::fix_boot(path.join("src/day08/input.txt"));
+    println!("\nDay 09");
+    //day09::solution::break_xmas(path.join("src/day09/input.txt"));
+    println!("\nDay 10");
+    day10::solution::joltage_diff(path.join("src/day10/input.txt"));
+    day10::solution::total_diffs(path.join("src/day10/input.txt"));
 }
