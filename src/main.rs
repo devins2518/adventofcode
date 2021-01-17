@@ -8,8 +8,8 @@ mod day05;
 mod day06;
 //mod day07;
 mod day08;
-mod day09;
 mod day10;
+mod day12;
 
 fn main() {
     let path = Path::new(env!("CARGO_MANIFEST_DIR"));
@@ -41,4 +41,6 @@ fn main() {
     println!("\nDay 10");
     day10::solution::joltage_diff(path.join("src/day10/input.txt"));
     day10::solution::total_diffs(path.join("src/day10/input.txt"));
+    println!("\nDay 12");
+    day12::solution::find_manhattan_dist(path.join("src/day12/input.txt"));
 }
