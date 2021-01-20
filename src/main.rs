@@ -10,6 +10,7 @@ mod day06;
 mod day08;
 mod day10;
 mod day12;
+mod day13;
 
 fn main() {
     let path = Path::new(env!("CARGO_MANIFEST_DIR"));
@@ -43,4 +44,7 @@ fn main() {
     day10::solution::total_diffs(path.join("src/day10/input.txt"));
     println!("\nDay 12");
     day12::solution::find_manhattan_dist(path.join("src/day12/input.txt"));
+    day12::solution::find_waypoint(path.join("src/day12/input.txt"));
+    println!("\nDay 13");
+    day13::solution::find_wait(path.join("src/day13/input.txt"));
 }

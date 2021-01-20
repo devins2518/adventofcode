@@ -37,6 +37,29 @@ enum Rotation {
     Right,
 }
 
+struct Waypoint {
+    x: i32,
+    y: i32,
+}
+
+impl Waypoint {
+    fn new() -> Self {
+        Waypoint { x: 10, y: 1 }
+    }
+
+    fn change_direction(&mut self, rotation: Rotation, amount: u32) {
+        for _ in 0..amount / 90 {
+            self.x ^= self.y;
+            self.y ^= self.x;
+            self.x ^= self.y;
+            match rotation {
+                Rotation::Left => self.x *= -1,
+                Rotation::Right => self.y *= -1,
+            }
+        }
+    }
+}
+
 struct Ship {
     x: i32,
     y: i32,
@@ -82,6 +105,11 @@ impl Ship {
                 self.x -= amount as i32;
             }
         };
+    }
+
+    fn to_waypoint(&mut self, waypoint: &Waypoint, amount: u32) {
+        self.y += waypoint.y * amount as i32;
+        self.x += waypoint.x * amount as i32;
     }
 }
 
@@ -133,24 +161,25 @@ pub fn find_waypoint(file: PathBuf) {
     let lines: Vec<&str> = string.lines().collect();
 
     let mut ship = Ship::new();
+    let mut waypoint = Waypoint::new();
     for line in lines {
         let amount = line[1..].parse::<i32>().unwrap();
         match line.chars().nth(0).unwrap() {
             'N' => {
-                ship.y += amount;
+                waypoint.y += amount;
             }
             'S' => {
-                ship.y -= amount;
+                waypoint.y -= amount;
             }
             'E' => {
-                ship.x += amount;
+                waypoint.x += amount;
             }
             'W' => {
-                ship.x -= amount;
+                waypoint.x -= amount;
             }
-            'L' => ship.change_direction(Rotation::Left, amount as u32),
-            'R' => ship.change_direction(Rotation::Right, amount as u32),
-            'F' => ship.forward(amount as u32),
+            'L' => waypoint.change_direction(Rotation::Left, amount as u32),
+            'R' => waypoint.change_direction(Rotation::Right, amount as u32),
+            'F' => ship.to_waypoint(&waypoint, amount as u32),
             _ => unreachable!(),
         }
     }
