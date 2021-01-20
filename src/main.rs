@@ -11,6 +11,7 @@ mod day08;
 mod day10;
 mod day12;
 mod day13;
+mod day15;
 
 fn main() {
     let path = Path::new(env!("CARGO_MANIFEST_DIR"));
@@ -47,4 +48,6 @@ fn main() {
     day12::solution::find_waypoint(path.join("src/day12/input.txt"));
     println!("\nDay 13");
     day13::solution::find_wait(path.join("src/day13/input.txt"));
+    println!("\nDay 15");
+    day15::solution::number_spoken(path.join("src/day15/input.txt"));
 }
