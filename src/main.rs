@@ -13,6 +13,7 @@ mod day12;
 //mod day13;
 mod day14;
 mod day15;
+mod day16;
 
 fn main() {
     let path = Path::new(env!("CARGO_MANIFEST_DIR"));
@@ -52,5 +53,7 @@ fn main() {
     println!("\nDay 14");
     day14::solution::sum_memory(path.join("src/day14/input.txt"));
     println!("\nDay 15");
-    day15::solution::number_spoken(path.join("src/day15/input.txt"));
+    //day15::solution::number_spoken(path.join("src/day15/input.txt"));
+    println!("\nDay 16");
+    day16::solution::find_error_rate(path.join("src/day16/input.txt"));
 }
