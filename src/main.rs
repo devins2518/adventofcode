@@ -6,14 +6,9 @@ mod day03;
 mod day04;
 mod day05;
 mod day06;
-//mod day07;
-mod day08;
+mod day09;
 mod day10;
 mod day12;
-//mod day13;
-mod day14;
-mod day15;
-mod day16;
 
 fn main() {
     let path = Path::new(env!("CARGO_MANIFEST_DIR"));
@@ -35,25 +30,15 @@ fn main() {
     println!("\nDay 06");
     day06::solution::count_groups(path.join("src/day06/input.txt"));
     day06::solution::count_everyone(path.join("src/day06/input.txt"));
-    //println!("\nDay 07");
-    //day07::solution::find_gold_bag(path.join("src/day07/input.txt"));
-    println!("\nDay 08");
-    //day08::solution::find_boot(path.join("src/day08/input.txt"));
-    //day08::solution::fix_boot(path.join("src/day08/input.txt"));
     println!("\nDay 09");
-    //day09::solution::break_xmas(path.join("src/day09/input.txt"));
+    day09::solution::break_xmas(path.join("src/day09/input.txt"));
+    day09::solution::contiguous_weakness(path.join("src/day09/input.txt"));
     println!("\nDay 10");
     day10::solution::joltage_diff(path.join("src/day10/input.txt"));
     day10::solution::total_diffs(path.join("src/day10/input.txt"));
     println!("\nDay 12");
     day12::solution::find_manhattan_dist(path.join("src/day12/input.txt"));
     day12::solution::find_waypoint(path.join("src/day12/input.txt"));
-    //println!("\nDay 13");
-    //day13::solution::find_wait(path.join("src/day13/input.txt"));
     println!("\nDay 14");
     day14::solution::sum_memory(path.join("src/day14/input.txt"));
-    println!("\nDay 15");
-    //day15::solution::number_spoken(path.join("src/day15/input.txt"));
-    println!("\nDay 16");
-    day16::solution::find_error_rate(path.join("src/day16/input.txt"));
 }

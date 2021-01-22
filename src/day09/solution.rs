@@ -26,3 +26,35 @@ pub fn break_xmas(input: PathBuf) {
         index += 1;
     }
 }
+
+pub fn contiguous_weakness(input: PathBuf) {
+    let file = read_to_string(input).unwrap();
+
+    let numbers: Vec<i128> = file
+        .lines()
+        .into_iter()
+        .map(|x| x.parse::<i128>().unwrap())
+        .collect();
+
+    let target = 1124361034;
+    let mut start = 0;
+    let mut end = 0;
+    let mut sum: i128 = numbers[start..=end].iter().sum();
+
+    loop {
+        if sum == target {
+            break;
+        } else if sum > target {
+            sum -= numbers[start];
+            start += 1;
+        } else {
+            end += 1;
+            sum += numbers[end];
+        }
+    }
+
+    println!(
+        "{}",
+        numbers[start..=end].iter().min().unwrap() + numbers[start..=end].iter().max().unwrap()
+    )
+}
