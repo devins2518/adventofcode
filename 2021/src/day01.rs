@@ -28,8 +28,9 @@ mod test {
     use super::*;
 
     #[test]
-    fn test_part1() {
-        let s = "199
+    fn test() {
+        let s = "\
+199
 200
 208
 210
@@ -38,7 +39,8 @@ mod test {
 240
 269
 260
-263";
+263\
+        ";
         assert_eq!(part1(s), 7);
         assert_eq!(part2(s), 5);
     }
