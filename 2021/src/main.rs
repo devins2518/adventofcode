@@ -1,5 +1,6 @@
 mod day01;
 mod day02;
+mod day03;
 
 macro_rules! aocday {
     ($day: ident) => {{
@@ -20,4 +21,5 @@ macro_rules! aocday {
 fn main() {
     aocday!(day01);
     aocday!(day02);
+    aocday!(day03);
 }
